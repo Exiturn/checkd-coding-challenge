@@ -1,6 +1,3 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import TopWidget from "./TopWidget";
 import BottomWidget from "./BottomWidget"
 

@@ -25,7 +25,7 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
             {homeStats === undefined ? (
                 <p>Loading...</p>
             ) : (
-                <p>
+                <p className='min-w-[2.5rem]'>
                     {`${homeStats}`}
                     {isPercentage ? "%" : "" }
                 </p>
@@ -38,7 +38,7 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
             {awayStats === undefined ? (
                 <p>Loading...</p>
             ) : (
-                <p>
+                <p className='min-w-[2.5rem] text-end'>
                     {`${awayStats}`}
                     {isPercentage ? "%" : "" }
                 </p>

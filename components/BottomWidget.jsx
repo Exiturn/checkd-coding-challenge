@@ -24,13 +24,6 @@ const BottomWidget = ({ data }) => {
     setStatVal(valueProp);
   };
 
-  useEffect(() => {
-    console.log(
-      "home, ",
-      home.stats.find((stat) => stat.type === "possessionPercentage")[statVal]
-    );
-  }, []);
-
   return (
     <section className="bg-gray-800 text-white w-full h-[70%] p-4">
       <p className="underline">Match Statistics</p>
