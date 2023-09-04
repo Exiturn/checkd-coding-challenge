@@ -1,5 +1,4 @@
 import Image from "next/image"
-
 import { arsenalLogo, fulhamLogo } from "@/utils/assets";
 
 const TopWidget = ({ data }) => {
@@ -10,7 +9,7 @@ const TopWidget = ({ data }) => {
     contestant,
   } = data;
 
-  console.log(competition);
+  // console.log(competition);
   return (
     <section className='w-full h-[30%] flex justify-between items-center bg-white p-4'>
       {/* Teams */}
