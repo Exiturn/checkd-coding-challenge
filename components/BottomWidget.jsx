@@ -10,8 +10,8 @@ const BottomWidget = ({ data }) => {
     lineups: { home, away },
   } = liveData;
 
-  const [activePeriod, setActivePeriod] = useState();
-  const [statVal, setStatVal] = useState("fh");
+  const [activePeriod, setActivePeriod] = useState("Full Time");
+  const [statVal, setStatVal] = useState("value");
 
   const matchPeriods = [
     { id: "1", name: "Full Time", valueProp: "value" },
@@ -19,23 +19,17 @@ const BottomWidget = ({ data }) => {
     { id: "3", name: "2nd Half", valueProp: "sh" },
   ];
 
-  const setMatchPeriod = ( periodName, valueProp ) => {
-    console.log(periodName, valueProp);
+  const setMatchPeriod = (periodName, valueProp) => {
     setActivePeriod(periodName);
+    setStatVal(valueProp);
   };
 
   useEffect(() => {
-    // console.log(
-    //   "home, ",
-    //   home.stats.find((stat) => stat.type === "possessionPercentage")[
-    //     matchPeriods[0].valueProp
-    //   ]
-    // );
+    console.log(
+      "home, ",
+      home.stats.find((stat) => stat.type === "possessionPercentage")[statVal]
+    );
   }, []);
-
-  useEffect(() => {
-    console.log("isFulltime: ", activePeriod);
-  }, [activePeriod]);
 
   return (
     <section className="bg-gray-800 text-white w-full h-[70%] p-4">
@@ -46,48 +40,43 @@ const BottomWidget = ({ data }) => {
         {matchPeriods.map((period) => (
           <button
             key={period.id}
-            className={`${activePeriod === period.name ? `timelineTabActive` : `timelineTab`}`}
+            className={`${
+              activePeriod === period.name ? `timelineTabActive` : `timelineTab`
+            }`}
             onClick={() => setMatchPeriod(period.name, period.valueProp)}
           >
             {period.name}
           </button>
         ))}
-        {/* <button className={`${isFulltime ? `timelineTabActive` : `timelineTab`}`} onClick={() => setIsFulltime(!isFulltime)}>Full Time</button>
-        <button className={`timelineTab`} onClick={() => setIsFirstHalf(true)}>1st Half</button>
-        <button className="timelineTab">2nd Half</button> */}
       </div>
 
       {/* Statistics Section */}
       <div className="w-full h-[75%] mt-6">
         {/* Possession */}
         <StatGraphics
-          homeStats={home.stats.find(
-            (stat) => stat.type === "possessionPercentage"
-          )}
-          awayStats={away.stats.find(
-            (stat) => stat.type === "possessionPercentage"
-          )}
+          homeStats={home.stats.find((stat) => stat.type === "possessionPercentage")[statVal]}
+          awayStats={away.stats.find((stat) => stat.type === "possessionPercentage")[statVal]}
           isPercentage={true}
           statType="Possession"
         />
         {/* Shots */}
-        <StatGraphics 
-          homeStats={home.stats.find((stat) => stat.type === "totalScoringAtt")}
-          awayStats={away.stats.find((stat) => stat.type === "totalScoringAtt")}
+        <StatGraphics
+          homeStats={home.stats.find((stat) => stat.type === "totalScoringAtt")[statVal]}
+          awayStats={away.stats.find((stat) => stat.type === "totalScoringAtt")[statVal]}
           isPercentage={false}
           statType="Shots"
         />
         {/* Shots on Target */}
-        <StatGraphics 
-          homeStats={home.stats.find((stat) => stat.type === "ontargetScoringAtt")}
-          awayStats={away.stats.find((stat) => stat.type === "ontargetScoringAtt")}
+        <StatGraphics
+          homeStats={home.stats.find((stat) => stat.type === "ontargetScoringAtt")[statVal]}
+          awayStats={away.stats.find((stat) => stat.type === "ontargetScoringAtt")[statVal]}
           isPercentage={false}
           statType="Shots on Target"
         />
         {/* Corners */}
-        <StatGraphics 
-          homeStats={home.stats.find((stat) => stat.type === "wonCorners")}
-          awayStats={away.stats.find((stat) => stat.type === "wonCorners")}
+        <StatGraphics
+          homeStats={home.stats.find((stat) => stat.type === "wonCorners")[statVal]}
+          awayStats={away.stats.find((stat) => stat.type === "wonCorners")[statVal]}
           isPercentage={false}
           statType="Corners"
         />

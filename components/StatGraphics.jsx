@@ -15,8 +15,8 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
     };
 
     useEffect(() => {
-        calcPercentage(homeStats.value, awayStats.value);
-    }, [])
+        calcPercentage(homeStats, awayStats);
+    }, [homeStats, awayStats])
 
   return (
     <section className='w-full h-auto mt-6'>
@@ -26,7 +26,7 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
                 <p>Loading...</p>
             ) : (
                 <p>
-                    {`${homeStats.value}`}
+                    {`${homeStats}`}
                     {isPercentage ? "%" : "" }
                 </p>
             )}
@@ -39,7 +39,7 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
                 <p>Loading...</p>
             ) : (
                 <p>
-                    {`${awayStats.value}`}
+                    {`${awayStats}`}
                     {isPercentage ? "%" : "" }
                 </p>
             )}
