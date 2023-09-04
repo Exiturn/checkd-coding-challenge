@@ -26,6 +26,27 @@ const BottomWidget = ({ data }) => {
           isPercentage={true}
           statType="Possession"
         />
+        {/* Shots */}
+        <StatGraphics 
+          homeStats={home.stats.find((stat) => stat.type === "totalScoringAtt")}
+          awayStats={away.stats.find((stat) => stat.type === "totalScoringAtt")}
+          isPercentage={false}
+          statType="Shots"
+        />
+        {/* Shots on Target */}
+        <StatGraphics 
+          homeStats={home.stats.find((stat) => stat.type === "ontargetScoringAtt")}
+          awayStats={away.stats.find((stat) => stat.type === "ontargetScoringAtt")}
+          isPercentage={false}
+          statType="Shots on Target"
+        />
+        {/* Corners */}
+        <StatGraphics 
+          homeStats={home.stats.find((stat) => stat.type === "wonCorners")}
+          awayStats={away.stats.find((stat) => stat.type === "wonCorners")}
+          isPercentage={false}
+          statType="Corners"
+        />
       </div>
     </section>
   )
