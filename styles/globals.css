@@ -13,3 +13,11 @@
 body {
     background-color: rgb(212, 212, 212);
 }
+
+.timelineTab {
+   @apply w-[5.5rem] bg-gray-900 text-white hover:bg-gray-600 transition-colors duration-[400] ease-in-out px-4 py-2 rounded-full
+}
+
+.timelineTabActive {
+    @apply w-[5.5rem] bg-yellow-400 text-black hover:text-white hover:bg-gray-600 transition-colors duration-[400] ease-in-out px-4 py-2 rounded-full
+}
