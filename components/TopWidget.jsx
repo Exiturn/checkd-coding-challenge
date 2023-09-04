@@ -9,7 +9,6 @@ const TopWidget = ({ data }) => {
     contestant,
   } = data;
 
-  // console.log(competition);
   return (
     <section className='w-full h-[30%] flex justify-between items-center bg-white p-4'>
       {/* Teams */}

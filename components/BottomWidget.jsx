@@ -5,7 +5,6 @@ const BottomWidget = ({ data }) => {
   const { liveData } = data;
   const { lineups: { home, away } } = liveData;
 
-  // console.log(home);
   return (
     <section className="bg-gray-800 text-white w-full h-[70%] p-4">
       <p className="underline">Match Statistics</p>
@@ -21,8 +20,8 @@ const BottomWidget = ({ data }) => {
       <div className="w-full h-[75%] mt-6">
         {/* Possession */}
         <StatGraphics 
-          homeStats={home.stats.find((stat) => stat.type === "totalScoringAtt")}
-          awayStats={away.stats.find((stat) => stat.type === "totalScoringAtt")}
+          homeStats={home.stats.find((stat) => stat.type === "possessionPercentage")}
+          awayStats={away.stats.find((stat) => stat.type === "possessionPercentage")}
           isPercentage={true}
           statType="Possession"
         />
