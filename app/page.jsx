@@ -1,8 +1,9 @@
-import React from 'react'
+"use client"
+import Widget from "@/components/Widget"
 
 const WidgetPage = () => {
   return (
-    <div>page</div>
+    <Widget />
   )
 }
 
