@@ -11,8 +11,8 @@ const Widget = ({ data }) => {
 
   return (
     <section className="w-[25rem] h-[40rem] flex flex-col justify-center items-center">
-        <TopWidget data={data} />
-        <BottomWidget data={data} />
+        {!data ? <div>Loading...</div> : <TopWidget data={data} />}
+        {!data ? <div>Loading...</div> : <BottomWidget data={data} />}
     </section>
   )
 };
