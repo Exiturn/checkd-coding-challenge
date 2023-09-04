@@ -51,7 +51,7 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
                 {homeStats === undefined ? (
                     <div />
                 ) : (
-                    <div className='absolute top-0 right-0 bg-green-600 h-[6px] rounded-full' style={{ width: `${homeValue}%` }} />
+                    <div className='bg-green-600 right-0 statGraphic' style={{ width: `${homeValue}%` }} />
                 )}
             </div>
 
@@ -60,7 +60,7 @@ const StatGraphics = ({ homeStats, awayStats, isPercentage, statType }) => {
                 {awayStats === undefined ? (
                     <div />
                 ) : (
-                    <div className='absolute top-0 left-0 bg-yellow-400 h-[6px] rounded-full' style={{ width: `${awayValue}%` }} />
+                    <div className='bg-yellow-400 left-0 statGraphic' style={{ width: `${awayValue}%` }} />
                 )}
             </div>
         </div>

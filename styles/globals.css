@@ -21,3 +21,7 @@ body {
 .timelineTabActive {
     @apply w-[5.5rem] bg-yellow-400 text-black hover:text-white hover:bg-gray-600 transition-colors duration-[400] ease-in-out px-4 py-2 rounded-full text-center
 }
+
+.statGraphic {
+    @apply absolute top-0 h-[6px] rounded-full transition-all duration-500 ease-in-out
+}
