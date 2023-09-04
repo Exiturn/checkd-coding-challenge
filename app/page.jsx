@@ -16,9 +16,9 @@ const WidgetPage = () => {
     fetchMatchData();
   }, []);
 
-  useEffect(() => {
-    console.log(matchData)
-  }, [matchData])
+//   useEffect(() => {
+//     console.log(matchData)
+//   }, [matchData])
 
   return (
     <div className="drop-shadow-xl">
