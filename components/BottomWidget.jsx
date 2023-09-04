@@ -20,7 +20,12 @@ const BottomWidget = ({ data }) => {
       {/* Statistics Section */}
       <div className="w-full h-[75%] mt-6">
         {/* Possession */}
-        <StatGraphics />
+        <StatGraphics 
+          homeStats={home.stats.find((stat) => stat.type === "totalScoringAtt")}
+          awayStats={away.stats.find((stat) => stat.type === "totalScoringAtt")}
+          isPercentage={true}
+          statType="Possession"
+        />
       </div>
     </section>
   )
