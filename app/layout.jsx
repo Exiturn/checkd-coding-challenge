@@ -2,8 +2,8 @@ import "@/styles/globals.css";
 
 export const metadta = {
   title: "Checkd Football Widget",
-  description: "A simple widget for the Checkd frontend developer challenge",
-};
+  description: "A simple widget for the Checkd frontend developer challenge"
+}
 
 const RootLayout = ({ children }) => {
   return (
