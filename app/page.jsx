@@ -1,10 +1,30 @@
-"use client"
-import Widget from "@/components/Widget"
+"use client";
+import Widget from "@/components/Widget";
+import { useState, useEffect } from "react";
+import { fetchData } from "@/utils/requests";
 
 const WidgetPage = () => {
-  return (
-    <Widget />
-  )
-}
+  const [matchData, setMatchData] = useState("");
 
-export default WidgetPage
+  useEffect(() => {
+    const fetchMatchData = async () => {
+      const apiUrl = "https://frontend-tech-test-ashy.vercel.app/api/match";
+      const res = await fetchData(apiUrl);
+
+      setMatchData(res.match);
+    };
+    fetchMatchData();
+  }, []);
+
+  //   useEffect(() => {
+  //     console.log(matchData)
+  //   }, [matchData])
+
+  return (
+    <div className="drop-shadow-xl">
+      <Widget />
+    </div>
+  );
+};
+
+export default WidgetPage;
