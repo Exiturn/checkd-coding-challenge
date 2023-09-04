@@ -43,6 +43,15 @@ const TopWidget = ({ data }) => {
           </p>
         </div>
       </div>
+
+      {/* Match Classification */}
+      <div className="flex flex-col items-center gap-y-4 w-[10%]">
+        <p className="">FT</p>
+        <div className="flex flex-col items-center justify-center gap-y-4 bg-black w-full rounded-md text-center h-[5rem]">
+          <p className="text-white w-full">{matchDetails.scores.total.home}</p>
+          <p className="text-white w-full">{matchDetails.scores.total.away}</p>
+        </div>
+      </div>
     </section>
   )
 }
